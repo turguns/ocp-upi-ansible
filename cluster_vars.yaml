@@ -1,28 +1,29 @@
-domain_name: vfinans.local
-cluster_name: izm-fcloud
-datacenter: Gaziemir
-datastore: GZMFINCO_DS01
-vmware_cluster: Finco_Prod
-vcenter_cluster: Finco_Prod
+domain_name: XYZ.local
+cluster_name: ocp-clustername
+datacenter: datacenter-name
+datastore: datastore-name
+vmware_cluster: vmware cluster
+vcenter_cluster: vmware cluster
 #vm_network: vlan_100
 #vm_network: "VM Network"
-vm_network: "10.190.230.0%2f26_VLAN1996"
+# Below I stuck an error and found that ansible reads "/" as a "%2f"
+vm_network: "10.10.23.0%2f26_VLAN111"
 vm_rootdisk_size: 120
-network_utility_ip: 10.190.230.51
-bootstrap_ip: 10.190.230.52
-master_ips: 10.190.230.20,10.190.230.21,10.190.230.22
-worker_ips: 10.190.230.35,10.190.230.36,10.190.230.37,10.190.230.38
-router_ips: 10.190.230.30,10.190.230.31,10.190.230.32
-infra_ips: 10.190.230.25,10.190.230.26,10.190.230.27
+network_utility_ip: IP
+bootstrap_ip: IP
+master_ips: IP
+worker_ips: IP
+router_ips: IP
+infra_ips: IP
 #ocs_ips: 172.31.226.30,172.31.226.31,172.31.226.32,172.31.226.33
-network_utility_netmask: 255.255.255.192
-network_utility_gateway: 10.190.230.1
-network_utility_dns_server: 10.190.230.51
+network_utility_netmask: Netmask
+network_utility_gateway: GW
+network_utility_dns_server: DNS 
 bootstrap_vm_name_prefix: "{{ cluster_name }}-bs"
-master_vm_name_prefix: "ocpmstifp"
-worker_vm_name_prefix: "ocpwrkifp"
-router_vm_name_prefix: "ocprtrifp"
-infra_vm_name_prefix: "ocpinfifp"
+master_vm_name_prefix: "name-of nodes"
+worker_vm_name_prefix: "name-of nodes"
+router_vm_name_prefix: "name-of nodes"
+infra_vm_name_prefix: "name-of nodes"
 pull_secret: '{"auths":{"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3ZvZGF0cjFkNG55bGdsZ25oZTZ5ZXpuMHJrdGNhaWZjazpLQzc1ODdVSDJLSVBMR1A5VUdCMEI2NTRJOThOS0lVQkpPUDc0SldaRkVFWEZQNE1NNjk3RU40NUFYR1QwWEtI","email":"it.iounix.tr@vodafone.com"},"quay.io":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3ZvZGF0cjFkNG55bGdsZ25oZTZ5ZXpuMHJrdGNhaWZjazpLQzc1ODdVSDJLSVBMR1A5VUdCMEI2NTRJOThOS0lVQkpPUDc0SldaRkVFWEZQNE1NNjk3RU40NUFYR1QwWEtI","email":"it.iounix.tr@vodafone.com"},"registry.connect.redhat.com":{"auth":"NTIwNzI3NHx1aGMtMWQ0bllsZ0xnbkhFNnlFek4wUmtUY2FJRmNLOmV5SmhiR2NpT2lKU1V6VXhNaUo5LmV5SnpkV0lpT2lKbVpUYzVaR1ptTnpobFpHTTBOekk1T0dabU5UazBNak13WWpNMk1XSmlPQ0o5LnVZbGNIUEphUDJONlNUajZfeGFFb2VTZDhOQWlQS2FjVWFQaGdGQ2M1ajFVZTFieEQ4YU9jbXBTdWhiZEU4WklpdjA0Snd0Z3N3Vk52TjZacGpfWHVEUjIyQkxuS3p6dkhua3pZTkE2YW1GY0tTMW5vbzdBTF9ZbkNrOElaUjMtVzNVMm1ONXJkcGQ4WmYxX1VEdDA1a3E5WWRSb0lCN0hKaVhVT2N2QTNpaFpxUVF3TFR5NUNuV096ajNvd2hDNHNGaGJkdTJzaDFkM1dHWk9Qc2tFa1RqYk9RaWxQLUM4YWR5VC1CclV5dDYwTVQzS2hlUXVQS08zT1ZxbDhHNkVzRW9LX3ZVLU9XWG5sOG1PSEtzQ0VGNFBSNUV6MWRBbm10S0RPZTJQWTdIQ2dlVV9EaVlWbFZZN0xIdzYxSk5ycGF4UmJjaVB5X2ctZHg5UUw0bmJXV0Z1dlBPNnl4WXFadmJrWFU5c2x3TF9JS21uaDRxaXVuNzJvakdKcmRzZ3BKVWlFaElZMEJoN2xhcUNIeUdDQUpmeTg5NmxBbXV6RVpRRUtfNmpwcjN3SThlRWNHTDYtdms5Smg5OGtpUkJOSFlnVl9XZ0FaOFV5b1pJeFFTQzdKZlRMeWhPWnRlOUhmbjBMYm9kU3ZCaE8wT1MxWVZGd185OHhNNVItV1NRS3BRU3lRR2MwQ1hqZGRkR0U0XzBkMnptM0twX3gwTDJtenNCMEJLdHptLVZ5VmU5dl84NGhzS2g5SDFaMlEzX0ttRkhiMElZOENha2lHQnVGVHFEYXAxUjU1N0tkWC1wRHdNQmw2Z3pXVVp3cFQ0ZURkX0pIU19teWhmdDNOOTZiYV8yY1VDZE1KVVBNeWJfZmE5YlB4WFI2cmhNYWQ3SGFCbWN5akxhUFZv","email":"it.iounix.tr@vodafone.com"},"registry.redhat.io":{"auth":"NTIwNzI3NHx1aGMtMWQ0bllsZ0xnbkhFNnlFek4wUmtUY2FJRmNLOmV5SmhiR2NpT2lKU1V6VXhNaUo5LmV5SnpkV0lpT2lKbVpUYzVaR1ptTnpobFpHTTBOekk1T0dabU5UazBNak13WWpNMk1XSmlPQ0o5LnVZbGNIUEphUDJONlNUajZfeGFFb2VTZDhOQWlQS2FjVWFQaGdGQ2M1ajFVZTFieEQ4YU9jbXBTdWhiZEU4WklpdjA0Snd0Z3N3Vk52TjZacGpfWHVEUjIyQkxuS3p6dkhua3pZTkE2YW1GY0tTMW5vbzdBTF9ZbkNrOElaUjMtVzNVMm1ONXJkcGQ4WmYxX1VEdDA1a3E5WWRSb0lCN0hKaVhVT2N2QTNpaFpxUVF3TFR5NUNuV096ajNvd2hDNHNGaGJkdTJzaDFkM1dHWk9Qc2tFa1RqYk9RaWxQLUM4YWR5VC1CclV5dDYwTVQzS2hlUXVQS08zT1ZxbDhHNkVzRW9LX3ZVLU9XWG5sOG1PSEtzQ0VGNFBSNUV6MWRBbm10S0RPZTJQWTdIQ2dlVV9EaVlWbFZZN0xIdzYxSk5ycGF4UmJjaVB5X2ctZHg5UUw0bmJXV0Z1dlBPNnl4WXFadmJrWFU5c2x3TF9JS21uaDRxaXVuNzJvakdKcmRzZ3BKVWlFaElZMEJoN2xhcUNIeUdDQUpmeTg5NmxBbXV6RVpRRUtfNmpwcjN3SThlRWNHTDYtdms5Smg5OGtpUkJOSFlnVl9XZ0FaOFV5b1pJeFFTQzdKZlRMeWhPWnRlOUhmbjBMYm9kU3ZCaE8wT1MxWVZGd185OHhNNVItV1NRS3BRU3lRR2MwQ1hqZGRkR0U0XzBkMnptM0twX3gwTDJtenNCMEJLdHptLVZ5VmU5dl84NGhzS2g5SDFaMlEzX0ttRkhiMElZOENha2lHQnVGVHFEYXAxUjU1N0tkWC1wRHdNQmw2Z3pXVVp3cFQ0ZURkX0pIU19teWhmdDNOOTZiYV8yY1VDZE1KVVBNeWJfZmE5YlB4WFI2cmhNYWQ3SGFCbWN5akxhUFZv","email":"it.iounix.tr@vodafone.com"}}}'
 authorized_ssh_keys: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDI5bvIVlrOJMsYrzo9sEZ1k1SqIDh/03nnFsz3RpOo3vyxRzvOUMXulntpGNn/vf85KuOeBHPIMVbLxJp055o38J9/TqMrfE09S6frXQryyNZOs92s4Bq1NsscCH4yC2El/hIfnSa4MCFw6CMWq3szBNwQEsloXYzejDp0hX/2uVawGfczHnnTAG/zj+eBfZ5E+uU3/SW6MIaRbL3fSp8ue1zTpKeis8TFpPTWspn9VO/BwF5QWnBYrNM7zLYpvhAS0soWC/sCbxaod85ta8QBFljflhnI3c4V14kGtExjl0aJZfIxakGu7+kwIgQGyP1/K1x937fxE3yQlfmq/c13 root@ocpbstivp0'
 #rhcos_template: rhcos-46.82.202010011740-0-vmware.x86_64
@@ -30,8 +31,8 @@ rhcos_template: rhcos-4.5.6-x86_64-vmware.x86_64
 openshift_major_version: 4.5
 openshift_minor_version: 6
 #http_proxy: http://192.168.0.3:8888 #<OPTIONAL>
-http_proxy: 'http://srvc.ocpuser:F78*ccvZwOUZdQ90jRfYGdt85@172.31.53.99:8080'
-https_proxy: 'https://srvc.ocpuser:F78*ccvZwOUZdQ90jRfYGdt85@172.31.53.99:8080'
+http_proxy: ''
+https_proxy: ''
 cluster_network: 100.127.0.0/16
 host_prefix: 24
 service_network: 100.126.0.0/16
