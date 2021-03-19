@@ -1,4 +1,10 @@
 ﻿# Automating OpenShift 4.x UPI installation 
+  
+  This is  cloned from Koray's repo  <https://github.com/kseremet/openshift4-vmware-upi > and added to playbook:
+  1. Create infra,router nodes 
+  2. Create network from Vlan (not from VMnetwork)
+ 
+ 
 
 This repository contains the playbooks and other required Ansible content to automate OpenShift 4.x UPI-based installation on VMware vSphere 6.x platfrom.
 >Official UPI on VMware documentation can be found on https://docs.openshift.com/container-platform/latest/installing/installing_vsphere/installing-vsphere.html
