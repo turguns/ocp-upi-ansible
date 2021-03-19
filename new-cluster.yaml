@@ -1,0 +1,49 @@
+domain_name: vodafone.local
+cluster_name: esy-mcloud
+datacenter: ESENYURT
+datastore: ESYOCP_PROD
+vmware_cluster: EsyOcp_Prod
+vcenter_cluster: EsyOcp_Prod
+#vm_network: vlan_100
+vm_network: "VM Network"
+vlan_id: "10.86.93.0%2f25_VLAN1634"
+sw_name: VFTRESYDVS_LAN
+vm_rootdisk_size: 120
+network_utility_ip: 10.86.93.119
+bootstrap_ip: 10.86.93.121
+master_ips: 10.86.93.40,10.86.93.41,10.86.93.42
+worker_ips: 10.86.93.55,10.86.93.56,10.86.93.57,10.86.93.58,10.86.93.59,10.86.93.60,10.86.93.61,10.86.93.62,10.86.93.63,10.86.93.64
+router_ips: 10.86.93.50,10.86.93.51,10.86.93.52
+infra_ips: 10.86.93.45,10.86.93.46,10.86.93.47
+ocs_ips: 10.86.93.114,10.86.93.115,10.86.93.116,10.86.93.117
+network_utility_netmask: 255.255.255.128
+network_utility_gateway: 10.86.93.1
+network_utility_dns_server: 10.86.16.135
+bootstrap_vm_name_prefix: "{{ cluster_name }}-bs"
+master_vm_name_prefix: "ocpmstemp"
+worker_vm_name_prefix: "ocpwrkemp"
+router_vm_name_prefix: "ocprtremp"
+infra_vm_name_prefix: "ocpinfemp"
+ocs_vm_name_prefix: "ocpocsemp"
+pull_secret: '{"auths":{"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3ZvZGF0cjFkNG55bGdsZ25oZTZ5ZXpuMHJrdGNhaWZjazpLQzc1ODdVSDJLSVBMR1A5VUdCMEI2NTRJOThOS0lVQkpPUDc0SldaRkVFWEZQNE1NNjk3RU40NUFYR1QwWEtI","email":"it.iounix.tr@vodafone.com"},"quay.io":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3ZvZGF0cjFkNG55bGdsZ25oZTZ5ZXpuMHJrdGNhaWZjazpLQzc1ODdVSDJLSVBMR1A5VUdCMEI2NTRJOThOS0lVQkpPUDc0SldaRkVFWEZQNE1NNjk3RU40NUFYR1QwWEtI","email":"it.iounix.tr@vodafone.com"},"registry.connect.redhat.com":{"auth":"NTIwNzI3NHx1aGMtMWQ0bllsZ0xnbkhFNnlFek4wUmtUY2FJRmNLOmV5SmhiR2NpT2lKU1V6VXhNaUo5LmV5SnpkV0lpT2lKbVpUYzVaR1ptTnpobFpHTTBOekk1T0dabU5UazBNak13WWpNMk1XSmlPQ0o5LnVZbGNIUEphUDJONlNUajZfeGFFb2VTZDhOQWlQS2FjVWFQaGdGQ2M1ajFVZTFieEQ4YU9jbXBTdWhiZEU4WklpdjA0Snd0Z3N3Vk52TjZacGpfWHVEUjIyQkxuS3p6dkhua3pZTkE2YW1GY0tTMW5vbzdBTF9ZbkNrOElaUjMtVzNVMm1ONXJkcGQ4WmYxX1VEdDA1a3E5WWRSb0lCN0hKaVhVT2N2QTNpaFpxUVF3TFR5NUNuV096ajNvd2hDNHNGaGJkdTJzaDFkM1dHWk9Qc2tFa1RqYk9RaWxQLUM4YWR5VC1CclV5dDYwTVQzS2hlUXVQS08zT1ZxbDhHNkVzRW9LX3ZVLU9XWG5sOG1PSEtzQ0VGNFBSNUV6MWRBbm10S0RPZTJQWTdIQ2dlVV9EaVlWbFZZN0xIdzYxSk5ycGF4UmJjaVB5X2ctZHg5UUw0bmJXV0Z1dlBPNnl4WXFadmJrWFU5c2x3TF9JS21uaDRxaXVuNzJvakdKcmRzZ3BKVWlFaElZMEJoN2xhcUNIeUdDQUpmeTg5NmxBbXV6RVpRRUtfNmpwcjN3SThlRWNHTDYtdms5Smg5OGtpUkJOSFlnVl9XZ0FaOFV5b1pJeFFTQzdKZlRMeWhPWnRlOUhmbjBMYm9kU3ZCaE8wT1MxWVZGd185OHhNNVItV1NRS3BRU3lRR2MwQ1hqZGRkR0U0XzBkMnptM0twX3gwTDJtenNCMEJLdHptLVZ5VmU5dl84NGhzS2g5SDFaMlEzX0ttRkhiMElZOENha2lHQnVGVHFEYXAxUjU1N0tkWC1wRHdNQmw2Z3pXVVp3cFQ0ZURkX0pIU19teWhmdDNOOTZiYV8yY1VDZE1KVVBNeWJfZmE5YlB4WFI2cmhNYWQ3SGFCbWN5akxhUFZv","email":"it.iounix.tr@vodafone.com"},"registry.redhat.io":{"auth":"NTIwNzI3NHx1aGMtMWQ0bllsZ0xnbkhFNnlFek4wUmtUY2FJRmNLOmV5SmhiR2NpT2lKU1V6VXhNaUo5LmV5SnpkV0lpT2lKbVpUYzVaR1ptTnpobFpHTTBOekk1T0dabU5UazBNak13WWpNMk1XSmlPQ0o5LnVZbGNIUEphUDJONlNUajZfeGFFb2VTZDhOQWlQS2FjVWFQaGdGQ2M1ajFVZTFieEQ4YU9jbXBTdWhiZEU4WklpdjA0Snd0Z3N3Vk52TjZacGpfWHVEUjIyQkxuS3p6dkhua3pZTkE2YW1GY0tTMW5vbzdBTF9ZbkNrOElaUjMtVzNVMm1ONXJkcGQ4WmYxX1VEdDA1a3E5WWRSb0lCN0hKaVhVT2N2QTNpaFpxUVF3TFR5NUNuV096ajNvd2hDNHNGaGJkdTJzaDFkM1dHWk9Qc2tFa1RqYk9RaWxQLUM4YWR5VC1CclV5dDYwTVQzS2hlUXVQS08zT1ZxbDhHNkVzRW9LX3ZVLU9XWG5sOG1PSEtzQ0VGNFBSNUV6MWRBbm10S0RPZTJQWTdIQ2dlVV9EaVlWbFZZN0xIdzYxSk5ycGF4UmJjaVB5X2ctZHg5UUw0bmJXV0Z1dlBPNnl4WXFadmJrWFU5c2x3TF9JS21uaDRxaXVuNzJvakdKcmRzZ3BKVWlFaElZMEJoN2xhcUNIeUdDQUpmeTg5NmxBbXV6RVpRRUtfNmpwcjN3SThlRWNHTDYtdms5Smg5OGtpUkJOSFlnVl9XZ0FaOFV5b1pJeFFTQzdKZlRMeWhPWnRlOUhmbjBMYm9kU3ZCaE8wT1MxWVZGd185OHhNNVItV1NRS3BRU3lRR2MwQ1hqZGRkR0U0XzBkMnptM0twX3gwTDJtenNCMEJLdHptLVZ5VmU5dl84NGhzS2g5SDFaMlEzX0ttRkhiMElZOENha2lHQnVGVHFEYXAxUjU1N0tkWC1wRHdNQmw2Z3pXVVp3cFQ0ZURkX0pIU19teWhmdDNOOTZiYV8yY1VDZE1KVVBNeWJfZmE5YlB4WFI2cmhNYWQ3SGFCbWN5akxhUFZv","email":"it.iounix.tr@vodafone.com"}}}'
+authorized_ssh_keys: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDT264ecAogL5MtN+gjVO2gDs562UztsDZRz60PW/PfPBD0pJRcRuXUwLa9M3dqkpMVsnrJBm9brBdgHmTnJIzHtheKlGNo/iGyTOrhTppRBmpIhqjMlSgxlw+mvVzo/Xg0NIypLrwms26bceq5y7hviyp6gawSvig3i40K0GlxtQTuZCC26rqHUr/5RNB39eQ/emdd8/rxfkFWbpwgvKGdM0dG7X5DWWSFnE/bK67GNtgvyd7416LMjKW9apir10vafya+wtX179PKB+EYZs5UfRhJTNLo/g79y7s6FpTHy8xeOVTcVMc0HGo4Uud/Rk2bHadGiKRPsY35UBw8Y4QB root@ocpbstnemp-222'
+rhcos_template: rhcos-4.4.3-x86_64-vmware.x86_64
+#rhcos_template: rhcos-4.3.0-x86_64-vmware-dev
+openshift_major_version: 4.4
+openshift_minor_version: 3
+#http_proxy: http://192.168.0.3:8888 #<OPTIONAL>
+http_proxy: 'http://srvc.ocpuser:D62!ccvZwOUZdQ95jRfYGds12@172.31.53.99:8080'
+https_proxy: 'https://srvc.ocpuser:D62!ccvZwOUZdQ95jRfYGds12@172.31.53.99:8080'
+cluster_network: 100.127.0.0/16
+host_prefix: 24
+service_network: 100.126.0.0/16
+master_vm_memory: 32768
+worker_vm_memory: 8192
+router_vm_memory: 16384
+infra_vm_memory: 65536
+ocs_vm_memory: 8192
+master_vm_cpus: 16
+worker_vm_cpus: 4
+router_vm_cpus: 4
+infra_vm_cpus: 32
+ocs_vm_cpus: 16
